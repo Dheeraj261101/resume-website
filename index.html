@@ -3,37 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Dheeraj's Resume</title>
     <style>
         body {
-            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
             text-align: center;
-            padding: 50px;
+            background-color: #f4f4f4;
         }
         .container {
             max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
             background: white;
-            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .btn-option {
+        .button {
+            display: block;
             width: 100%;
+            padding: 10px;
             margin: 10px 0;
+            background: #2ecdf3;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .content {
+            display: none;
+            margin-top: 10px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>My Resume</h1>
-        <p>Welcome to my resume! Click the buttons below to explore different sections.</p>
-        
-        <a href="#about" class="btn btn-primary btn-option">About Me</a>
-        <a href="#skills" class="btn btn-success btn-option">Skills</a>
-        <a href="#experience" class="btn btn-danger btn-option">Experience</a>
-        <a href="#projects" class="btn btn-warning btn-option">Projects</a>
-        <a href="#contact" class="btn btn-info btn-option">Contact</a>
+        <h1>Yerramsetti Dheeraj</h1>
+        <button class="button" onclick="toggleContent('summary')">Summary</button>
+        <div id="summary" class="content">
+            <p>Aspiring and adaptable post graduate with a Master’s degree in Computer Applications...</p>
+        </div>
+
+        <button class="button" onclick="toggleContent('education')">Education</button>
+        <div id="education" class="content">
+            <p>MCA - Annamacharya Institute of Technology and Sciences, Tirupati...</p>
+        </div>
+
+        <button class="button" onclick="toggleContent('hobbies')">Hobbies</button>
+        <div id="hobbies" class="content">
+            <p>Browsing, learning new things, finding glitches in games, watching movies, cricket...</p>
+        </div>
+
+        <button class="button" onclick="toggleContent('expertise')">Expertise</button>
+        <div id="expertise" class="content">
+            <p>Good Communication, Positive Nature, Team Worker, Time Management...</p>
+        </div>
+
+        <button class="button" onclick="toggleContent('achievements')">Achievements & Certifications</button>
+        <div id="achievements" class="content">
+            <p>Certified in C Training by IIT Bombay, Swiggy Data Analysis using PowerBI...</p>
+        </div>
+
+        <button class="button" onclick="toggleContent('projects')">Projects</button>
+        <div id="projects" class="content">
+            <p>Azure Cloud IIS Web Server Deployment, Hospital Management System using Java...</p>
+        </div>
     </div>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
